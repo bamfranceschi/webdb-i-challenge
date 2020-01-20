@@ -11,6 +11,8 @@ server.use((err, req, res, next) => {
   res.status(500).json({ mesage: "something went wrong" });
 });
 
+// tested and working
+
 server.get("/", async (req, res, next) => {
   try {
     res.json(await db.select("*").from("accounts"));
@@ -18,6 +20,8 @@ server.get("/", async (req, res, next) => {
     next(err);
   }
 });
+
+// tested and working
 
 server.get("/:id", async (req, res, next) => {
   try {
@@ -30,6 +34,8 @@ server.get("/:id", async (req, res, next) => {
     next(err);
   }
 });
+
+// tested and working
 
 server.post("/", async (req, res, next) => {
   try {
@@ -44,6 +50,8 @@ server.post("/", async (req, res, next) => {
     next(err);
   }
 });
+
+// tested and working
 
 server.put("/:id", async (req, res, next) => {
   try {
@@ -60,6 +68,8 @@ server.put("/:id", async (req, res, next) => {
     next(err);
   }
 });
+
+// tested and working
 
 server.delete("/:id", async (req, res, next) => {
   try {
